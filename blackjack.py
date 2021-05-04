@@ -110,8 +110,10 @@ def is_game_over(computer_hand, player_hand, is_first_round):
             return {'outcome': True, 'message': 'You win (Computer busts)'}
         elif sum(computer_hand) == 21:
             return {'outcome': True, 'message': 'You lose'}
-        else:
-            return {'outcome': False, 'message': 'Game continues'}
+        elif sum(computer_hand) > sum(player_hand):
+            return {'outcome': True, 'message': 'You lose'}
+        elif sum(player_hand) > sum(computer_hand):
+            return {'outcome': True, 'message': 'You win'}
 
 
 def game():
