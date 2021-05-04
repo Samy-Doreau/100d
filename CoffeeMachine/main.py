@@ -112,9 +112,12 @@ def replenish_stocks(resources):
     restock_confirm_answer = ask_question_with_set_answers(
         restock_summary, ['y', 'n'])
     if restock_confirm_answer == 'y':
-        resources['water'] = resources.get('water', 0) + amount_of_water
-        resources['milk'] = resources.get('milk', 0) + amount_of_milk
-        resources['coffee'] = resources.get('coffee', 0) + amount_of_coffee
+        resources['water']['amount'] = resources['water'].get(
+            'amount', 0) + amount_of_water
+        resources['milk']['amount'] = resources['milk'].get(
+            'amount', 0) + amount_of_milk
+        resources['coffee']['amount'] = resources['coffee'].get(
+            'amount', 0) + amount_of_coffee
 
         print("Many thanks, the current inventory is : \n")
         print_report(resources)
