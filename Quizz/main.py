@@ -8,4 +8,5 @@ for q in question_data:
 quiz = QuizzBrain(question_bank)
 while quiz.still_has_questions():
     quiz.next_question()
-print(f"Your final score is : {quiz.score}")
+print(
+    f"You've completed the quizz, \n your final score is : {quiz.score} / {quiz.question_nb}.")
