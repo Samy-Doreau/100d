@@ -8,7 +8,7 @@ FINISH_LINE_Y = 280
 class Player(Turtle):
     def __init__(self):
         super().__init__()
-        self.score = 0
+
         self.penup()
         self.shape('turtle')
         self.color('green')
